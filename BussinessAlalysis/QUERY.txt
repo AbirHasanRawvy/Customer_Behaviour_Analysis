@@ -16,3 +16,7 @@ SELECT
     SUM(`purchase_amount(usd)`) AS revenue
 FROM customer
 GROUP BY gender;
+
+select category, sum('purchase_amount(usd)') as revenue, count(*) as total_sales from customer 
+group by category
+order by revenue;
