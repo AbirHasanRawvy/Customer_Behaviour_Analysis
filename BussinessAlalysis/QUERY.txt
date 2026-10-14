@@ -1,0 +1,18 @@
+create database PaythonSQL;
+
+use paythonsql;
+
+select * from datasheet;
+
+
+create database PaythonSQL1;
+
+use PaythonSQL1;
+
+select * from customer limit 5;
+
+SELECT
+    gender,
+    SUM(`purchase_amount(usd)`) AS revenue
+FROM customer
+GROUP BY gender;
