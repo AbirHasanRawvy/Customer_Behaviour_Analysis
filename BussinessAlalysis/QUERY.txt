@@ -9,7 +9,7 @@ create database PaythonSQL1;
 
 use PaythonSQL1;
 
-select * from customer limit 5;
+
 
 SELECT
     gender,
@@ -20,3 +20,28 @@ GROUP BY gender;
 select category, sum('purchase_amount(usd)') as revenue, count(*) as total_sales from customer 
 group by category
 order by revenue;
+
+
+
+select * from customer limit 5;
+# Which season the revenue will earn most?
+select season, sum('purchase_amount(usd)') as revenue, count(*) as total_sales from customer
+group by season
+order by revenue desc;
+
+#Which payment methods were most used?
+select payment_method, sum('purchase_amount(usd)') as Revenue, count(*) as total_sales from customer
+group by payment_method
+order by revenue desc;
+
+#Which age group of company work most or earn most amount of revenue?
+select age, sum('purchase_amount(usd)') as revenue, count(*) as total_sales from customer
+group by age
+order by revenue desc;
+
+select * from customer limit 5;
+
+# If you give a discount for customer, the revenue will increase or decrease?
+select discount_applied, count(*) as total_sales, sum('purchase_amount(usd)') as revenue from customer
+group by discount_applied
+order by total_sales desc;
